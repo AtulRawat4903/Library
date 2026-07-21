@@ -74,6 +74,7 @@ function displayBooks() {
 
 const form = document.querySelector("#book-form");
 const dialog = document.querySelector("#book-dialog");
+const cancelBtn = document.querySelector("#cancel-btn");
 
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
@@ -103,3 +104,7 @@ newBookBtn.addEventListener("click", () => {
     dialog.showModal();
 });
 
+cancelBtn.addEventListener("click", () => {
+    form.reset();
+    dialog.close();
+});
