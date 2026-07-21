@@ -171,6 +171,13 @@ dialog::backdrop {
     background: rgba(0,0,0,.75);
 }
 
+dialog h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+
+    text-align: center;
+}
+
 #book-form {
     display: flex;
     flex-direction: column;
@@ -233,10 +240,22 @@ label {
 }
 
 #book-form button[type="submit"] {
-    background: royalblue;
+    background: #3b82f6;
     color: white;
 }
 
 #book-form button[type="submit"]:hover {
     background: #2563eb;
+}
+
+.empty-library {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 1.2rem;
+
+    padding: 4rem 0;
 }

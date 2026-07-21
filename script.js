@@ -32,6 +32,17 @@ const library = document.querySelector("#library");
 function displayBooks() {
     library.innerHTML = "";
 
+    if (myLibrary.length === 0) {
+        library.innerHTML = `
+            <p class="empty-library">
+                Your library is empty.
+                <br>
+                Click <strong>New Book</strong> to add one.
+            </p>
+        `;
+        return;
+    }
+
     myLibrary.forEach((book) => {
         const card = document.createElement("div");
         card.classList.add("card");
@@ -41,14 +52,17 @@ function displayBooks() {
         card.innerHTML = `
             <h2>${book.title}</h2>
             <p>Author: ${book.author}</p>
-            <p>${book.pages} pages</p>
+            <p>
+                ${book.pages}
+                ${book.pages === 1 ? "page" : "pages"}
+            </p>
             <p class="${book.read ? "read" : "unread"}">
                 Status: ${book.read ? "Read ✅" : "Not Read ❌"}
             </p>
 
             <div class="card-buttons">
                 <button class="toggle-btn">
-                    ${book.read ? "Mark Unread" : "Mark Read"}
+                    ${book.read ? "Mark as Unread" : "Mark as Read"}
                 </button>
 
                 <button class="remove-btn">
@@ -95,8 +109,6 @@ form.addEventListener("submit", function (event) {
 
     displayBooks();
 
-    form.reset();
-
     dialog.close();
 });
 
@@ -107,6 +119,11 @@ newBookBtn.addEventListener("click", () => {
 });
 
 cancelBtn.addEventListener("click", () => {
-    form.reset();
     dialog.close();
 });
+
+dialog.addEventListener("close", () => {
+    form.reset();
+});
+
+displayBooks();
