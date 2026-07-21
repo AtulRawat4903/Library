@@ -17,6 +17,16 @@ function addBookToLibrary(title, author, pages, read) {
     myLibrary.push(book);
 }
 
+function removeBook(id) {
+    const index = myLibrary.findIndex((book) => book.id === id);
+
+    if (index !== -1) {
+        myLibrary.splice(index, 1);
+    }
+
+    displayBooks();
+}
+
 const library = document.querySelector("#library");
 
 function displayBooks() {
@@ -57,15 +67,7 @@ function displayBooks() {
         const removeBtn = card.querySelector(".remove-btn");
 
         removeBtn.addEventListener("click", () => {
-            const id = card.dataset.id;
-
-            const index = myLibrary.findIndex((book) => book.id === id);
-
-            if (index !== -1) {
-                myLibrary.splice(index, 1);
-            }
-
-            displayBooks();
+            removeBook(card.dataset.id);
         });
 
         library.appendChild(card);
