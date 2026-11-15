@@ -96,9 +96,3 @@ This project helped me practice:
 - Filter books by read/unread status
 
 ---
-
-## 📝 Acknowledgements
-
-This project was built as part of **The Odin Project** JavaScript curriculum.
-
-https://www.theodinproject.com/
