@@ -89,10 +89,10 @@ This project helped me practice:
 
 ## 🚀 Future Improvements
 
-- Persist library data using Local Storage
-- Search books by title or author
-- Edit existing books
-- Sort books by title or author
-- Filter books by read/unread status
+- Persistent library data using Local Storage
+- Search the books by their title or author
+- Edit the existing books
+- Sort the books by title or author
+- Filter the books by read/unread status
 
 ---
